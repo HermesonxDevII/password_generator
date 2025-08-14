@@ -9,13 +9,13 @@ from password import (
 )
 
 if __name__ == "__main__":
-    print("=== Password Generator & Validator ===")
+    print("=== Gerador de Senha ===")
 
-    length = int(input("Enter password length: "))
-    use_uppercase = input("Use uppercase? (y/n): ").lower() == "y"
-    use_lowercase = input("Use lowercase? (y/n): ").lower() == "y"
-    use_digits = input("Use digits? (y/n): ").lower() == "y"
-    use_symbols = input("Use symbols? (y/n): ").lower() == "y"
+    length = int(input("Quantos digitos precisa ter na senha?: "))
+    use_uppercase = input("Contém letras maiusculas? (s/n): ").lower() == "s"
+    use_lowercase = input("Contém letras minusculas? (s/n): ").lower() == "s"
+    use_digits = input("Contém números? (s/n): ").lower() == "s"
+    use_symbols = input("Contem caracteres especiais? (s/n): ").lower() == "s"
 
     pwd = generate_password(
         length,
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         use_digits,
         use_symbols
     )
-    print(f"\nGenerated password: {pwd}")
+    print(f"\nSenha gerada: {pwd}")
 
     validator = create_validator(
         length,
@@ -37,6 +37,6 @@ if __name__ == "__main__":
     )
 
     if validate_password(pwd, [validator]):
-        print("Password meets the criteria.")
+        print("A senha atende aos critérios.")
     else:
-        print("Password does NOT meet the criteria.")
+        print("A senha NÃO atende aos critérios.")

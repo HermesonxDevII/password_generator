@@ -15,8 +15,8 @@ def test_generation():
 
 def test_validation():
     print("\n=== Validation Test ===")
-    test_pwd = "Aa1!"
-    validator = create_validator(4, [has_uppercase, has_lowercase, has_digit, has_symbol])
+    test_pwd = "XV:o3=Dg{D_R|u:|UdBT"
+    validator = create_validator(20, [has_uppercase, has_lowercase, has_digit, has_symbol])
     print(f"Password '{test_pwd}' is valid? {validate_password(test_pwd, [validator])}")
 
 if __name__ == "__main__":
